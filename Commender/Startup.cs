@@ -1,4 +1,5 @@
 using System;
+using Commender.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -28,6 +29,9 @@ namespace Commender
         {
 
             services.AddControllers();
+            
+            services.AddScoped<ICommanderRepo,MocCommanderRepo>();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Commender", Version = "v1" });

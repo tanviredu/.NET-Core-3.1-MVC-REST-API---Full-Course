@@ -1,3 +1,4 @@
+
 namespace Commender.Models{
 
     public class Command{

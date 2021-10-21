@@ -10,7 +10,13 @@ namespace Commender.Controllers
     [ApiController]
     public class CommandsController:ControllerBase
     {
-        private readonly MocCommanderRepo _repository = new MocCommanderRepo();
+        private readonly ICommanderRepo _repository;
+        public CommandsController(ICommanderRepo repository)
+        {
+            _repository = repository;
+            
+        }
+        //private readonly MocCommanderRepo _repository = new MocCommanderRepo();
 
 
         [HttpGet]
