@@ -5,6 +5,16 @@ namespace Commender.Data
 {
     public class MocCommanderRepo : ICommanderRepo
     {
+        public void CreateCommand(Command cmd)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteCommand(Command cmd)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<Command> GetAllCommand()
         {
             var commands = new List<Command>{
@@ -22,6 +32,16 @@ namespace Commender.Data
                 Id=0,HowTo="Boil an Egg",
                 Line="Boil water",
                 Platform="kettle and Pan"};
+        }
+
+        public bool SaveChanges()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateCommand(Command cmd)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using Commender.Data;
+using AutoMapper;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -29,11 +30,10 @@ namespace Commender
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<CommanderContext>(opt=>opt.UseSqlite(Configuration.GetConnectionString("CommanderConnection")));
-            
             services.AddControllers();
-            
-            services.AddScoped<ICommanderRepo,MocCommanderRepo>();
-
+            //services.AddScoped<ICommanderRepo,MocCommanderRepo>();
+            services.AddScoped<ICommanderRepo,SqlCommanderRepo>();
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Commender", Version = "v1" });

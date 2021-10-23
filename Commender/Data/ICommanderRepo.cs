@@ -9,5 +9,9 @@ namespace Commender.Data
     {
         IEnumerable<Command> GetAllCommand();
         Command GetCommandById(int id);
+        void CreateCommand(Command cmd);
+        void UpdateCommand(Command cmd);
+        bool SaveChanges();
+        void DeleteCommand(Command cmd);
     }
 }
